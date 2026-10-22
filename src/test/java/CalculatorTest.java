@@ -1,6 +1,8 @@
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
+//Will use TDD- Test Driven Development
+// 1. Write failing unit tests first
+// 2. Write just enough of production code to pass unit test
 
 public class CalculatorTest {
     Calculator calculator = new Calculator();
@@ -8,12 +10,15 @@ public class CalculatorTest {
     // Follow BUILD, OPERATE, CHECK
     @Test
     public void testSum() {
-        //Recall that we should FIRST have a failing unit test
-
         int expected = 3;
         int actual = calculator.sum(1,2);
         assertEquals(expected, actual);
-
+    }
+    @Test
+    public void testSubtract() {
+        int expected = -1;
+        int actual = calculator.subtract(1,2);
+        assertEquals(expected, actual);
     }
 
 }
