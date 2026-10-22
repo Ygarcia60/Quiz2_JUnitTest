@@ -5,10 +5,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class CalculatorTest {
     Calculator calculator = new Calculator();
 
+    // Follow BUILD, OPERATE, CHECK
     @Test
     public void testSum() {
-        int expected = -1;
-        int actual = 2;
+        //Recall that we should FIRST have a failing unit test
+
+        int expected = 3;
+        int actual = calculator.sum(1,2);
         assertEquals(expected, actual);
 
     }
