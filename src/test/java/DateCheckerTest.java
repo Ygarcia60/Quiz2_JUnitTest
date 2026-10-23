@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
 
@@ -9,6 +10,12 @@ public class DateCheckerTest {
     DateChecker dateChecker = new DateChecker();
     //use Parameterized test for multiple values, or we run 12 individual unit tests
     //January , March, May, July, August, October, December
+
+    //Single test case
+    @Test
+    public void testHas31DaysJanuary() {
+        assertFalse(dateChecker.has31Days(DateChecker.Month.JANUARY));
+    }
     @ParameterizedTest
     @EnumSource(value = DateChecker.Month.class, names = {"JANUARY" , "MARCH", "MAY", "JULY", "AUGUST",
             "OCTOBER", "DECEMBER" })
