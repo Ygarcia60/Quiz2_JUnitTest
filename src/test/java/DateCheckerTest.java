@@ -13,7 +13,7 @@ public class DateCheckerTest {
     //Single TEST case
     @Test
     public void testHas31DaysJanuary() {
-        assertTrue(dateChecker.has31Days(DateChecker.Month.JANUARY));
+        assertTrue(dateChecker.has31Days(DateChecker.Month.JANUARY), "JANUARY has days");
     }
     // Parameterized TESTS
     @ParameterizedTest
@@ -22,20 +22,20 @@ public class DateCheckerTest {
 
     public void testHas31Days(DateChecker.Month month) {
 
-        assertTrue(dateChecker.has31Days(month));
+        assertTrue(dateChecker.has31Days(month), "should have 31 days");
     }
     //checking for months that DO NOT have 31 days
     // February, April, September
     @ParameterizedTest
     @EnumSource(value = DateChecker.Month.class, names = {"FEBRUARY" , "APRIL", "JUNE", "SEPTEMBER", "NOVEMBER"})
     public void testDoesNotHave31Days(DateChecker.Month month) {
-        assertFalse(dateChecker.has31Days(month));
+        assertFalse(dateChecker.has31Days(month), "should not have 31 days");
     }
 
     //EDGE CASES TESTS
     @Test
     public void testHas31DaysFeb() {
-        assertFalse(dateChecker.has31Days(DateChecker.Month.FEBRUARY));
+        assertFalse(dateChecker.has31Days(DateChecker.Month.FEBRUARY), "FEBRUARY never has 31 days, so it returns false");
     }
     @Test
     public void testHas31DaysNull() {
