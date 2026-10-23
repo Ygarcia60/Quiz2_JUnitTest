@@ -23,7 +23,7 @@ public class CalculatorTest {
     @Test
     public void testMultiply() {
         int expected = 2;
-        int actual = calculator.subtract(1,2);
+        int actual = calculator.multiply(1,2);
         assertEquals(expected, actual);
     }
 
