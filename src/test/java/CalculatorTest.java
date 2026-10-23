@@ -51,8 +51,10 @@ public class CalculatorTest {
         int[] expected = new int[]{2,3,4};
         int[] actual = calculator.incrementArrays(new int[]{1,2,3});
         assertArrayEquals(expected,actual);
-
-
+    }
+    @Test
+    public void testDivideByZero() {
+        Exception exception = assertThrows(IllegalAccessException.class, () -> calculator.divide(1,0));
     }
 
 }
