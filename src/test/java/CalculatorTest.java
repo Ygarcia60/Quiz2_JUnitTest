@@ -18,13 +18,13 @@ public class CalculatorTest {
     }
     @Test
     public void testSumNegative() {
-        int expected = 5;
+        int expected = 1;
         int actual = calculator.sum(-2,3);
         assertEquals(expected, actual);
     }
     @Test
     public void testSumZero() {
-        int expected = 0;
+        int expected = 7;
         int actual = calculator.sum(7,0);
         assertEquals(expected, actual);
     }
