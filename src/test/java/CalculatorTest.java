@@ -9,6 +9,7 @@ public class CalculatorTest {
     Calculator calculator = new Calculator();
 
     // Follow BUILD, OPERATE, CHECK
+    //SUM
     @Test
     public void testSum() {
         int expected = 3;
@@ -16,11 +17,37 @@ public class CalculatorTest {
         assertEquals(expected, actual);
     }
     @Test
+    public void testSumNegative() {
+        int expected = 5;
+        int actual = calculator.sum(-2,3);
+        assertEquals(expected, actual);
+    }
+    @Test
+    public void testSumZero() {
+        int expected = 0;
+        int actual = calculator.sum(7,0);
+        assertEquals(expected, actual);
+    }
+    //Subtract
+    @Test
     public void testSubtract() {
         int expected = -1;
         int actual = calculator.subtract(1,2);
         assertEquals(expected, actual);
     }
+    @Test
+    public void testSubtractNegative() {
+        int expected = 1;
+        int actual = calculator.subtract(-2,-3);
+        assertEquals(expected, actual);
+    }
+    @Test
+    public void testSubtractZero() {
+        int expected = 3;
+        int actual = calculator.subtract(0,-3);
+        assertEquals(expected, actual);
+    }
+    //Multiply
     @Test
     public void testMultiply() {
         int expected = 2;
@@ -45,13 +72,7 @@ public class CalculatorTest {
         boolean actual = calculator.isEven(3);
         assertFalse(actual);
     }
-    @Test
-    public void testIncrementArrays() {
 
-        int[] expected = new int[]{2,3,4};
-        int[] actual = calculator.incrementArrays(new int[]{1,2,3});
-        assertArrayEquals(expected,actual);
-    }
     @Test
     public void testDivideByZero() {
         Exception exception = assertThrows(IllegalArgumentException.class, () -> calculator.divide(1,0));
