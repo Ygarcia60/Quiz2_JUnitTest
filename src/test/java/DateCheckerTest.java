@@ -41,9 +41,7 @@ public class DateCheckerTest {
     public void testHas31DaysNull() {
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class,
         () -> dateChecker.has31Days(null));
-
         assertEquals("Month must not be Null", exception.getMessage());
-
     }
 
 
