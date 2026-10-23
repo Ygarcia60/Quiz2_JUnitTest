@@ -16,4 +16,11 @@ public class DateCheckerTest {
 
         assertTrue(dateChecker.has31Days(month));
     }
+    //checking for months that DO NOT have 31 days
+    // February, April, September
+    @ParameterizedTest
+    @EnumSource(value = DateChecker.Month.class, names = {"FEBRUARY" , "APRIL", "JUNE", "SEPTEMBER", "NOVEMBER"})
+    public void testDoesNotHave31Days(DateChecker.Month month) {
+        assertTrue(dateChecker.has31Days(month));
+    }
 }
