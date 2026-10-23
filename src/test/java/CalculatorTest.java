@@ -79,7 +79,6 @@ public class CalculatorTest {
         boolean actual = calculator.isEven(3);
         assertFalse(actual);
     }
-
     @Test
     public void testDivideByZero() {
         Exception exception = assertThrows(IllegalArgumentException.class, () -> calculator.divide(1,0));
@@ -87,5 +86,4 @@ public class CalculatorTest {
         String actualMessage= exception.getMessage();
         assertEquals(expectedMessage,actualMessage);
     }
-
 }
