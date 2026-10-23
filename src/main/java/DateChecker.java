@@ -20,6 +20,9 @@ public class DateChecker {
             Month.JULY, Month.AUGUST, Month.OCTOBER, Month.DECEMBER};
 
     public boolean has31Days(Month month) {
+        if (month == null) {
+            throw new IllegalArgumentException("Month must not be Null");
+        }
         if (Arrays.asList(monthThirtyOneDays).contains(month)) {
             return true;
         }
