@@ -11,11 +11,12 @@ public class DateCheckerTest {
     //use Parameterized test for multiple values, or we run 12 individual unit tests
     //January , March, May, July, August, October, December
 
-    //Single test case
+    //Single TEST case
     @Test
     public void testHas31DaysJanuary() {
         assertTrue(dateChecker.has31Days(DateChecker.Month.JANUARY));
     }
+    // Parameterized TESTS
     @ParameterizedTest
     @EnumSource(value = DateChecker.Month.class, names = {"JANUARY" , "MARCH", "MAY", "JULY", "AUGUST",
             "OCTOBER", "DECEMBER" })
@@ -31,4 +32,11 @@ public class DateCheckerTest {
     public void testDoesNotHave31Days(DateChecker.Month month) {
         assertFalse(dateChecker.has31Days(month));
     }
+
+    //EDGE CASES TESTS
+    @Test
+    public void testHas31DaysFeb() {
+        assertTrue(dateChecker.has31Days(DateChecker.Month.FEBRUARY));
+    }
+
 }
