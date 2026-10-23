@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class DateCheckerTest {
 
     DateChecker dateChecker = new DateChecker();
-
+    //use Parameterized test for multiple values, or we run 12 individual unit tests
     //January , March, May, July, August, October, December
     @ParameterizedTest
     @EnumSource(value = DateChecker.Month.class, names = {"JANUARY" , "MARCH", "MAY", "JULY", "AUGUST",
