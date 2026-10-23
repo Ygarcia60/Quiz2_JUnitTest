@@ -1,5 +1,6 @@
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import static org.junit.jupiter.api.Assertions.*;
 //Will use TDD- Test Driven Development
 // 1. Write failing unit tests first
 // 2. Write just enough of production code to pass unit test
@@ -36,9 +37,21 @@ public class CalculatorTest {
     //boolean test --> true or false
     @Test
     public void testIsEven() {
-        boolean expected = true;
         boolean actual = calculator.isEven(2);
-        assertEquals(expected, actual);
+        assertTrue(actual);
+    }
+    @Test
+    public void testIsOdd() {
+        boolean actual = calculator.isEven(3);
+        assertFalse(actual);
+    }
+    @Test
+    public void testIncrementArrays() {
+
+        int[] expected = new int[]{2,3,4};
+        int[] actual = calculator.incrementArrays(new int[]{1,2,3});
+        assertArrayEquals(expected,actual);
+
 
     }
 

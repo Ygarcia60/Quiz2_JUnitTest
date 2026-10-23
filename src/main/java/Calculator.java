@@ -15,4 +15,12 @@ public class Calculator {
     public boolean isEven(int i) {
         return i%2==0;
     }
-}
+    //arrays
+    public int[] incrementArrays(int[] values) {
+        int[] newValues = new int[values.length];
+        for (int i = 0; i < values.length; i++) {
+            newValues[i] = values[i] + 1;
+        }
+        return newValues;
+    }
+        }
