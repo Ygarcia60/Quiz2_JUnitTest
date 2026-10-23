@@ -36,7 +36,7 @@ public class DateCheckerTest {
     //EDGE CASES TESTS
     @Test
     public void testHas31DaysFeb() {
-        assertTrue(dateChecker.has31Days(DateChecker.Month.FEBRUARY));
+        assertFalse(dateChecker.has31Days(DateChecker.Month.FEBRUARY));
     }
 
 }
